@@ -26,3 +26,8 @@ jobs:
           BB_SECRET: ${{ secrets.BB_SECRET }}
           BB_ACCESS: ${{ secrets.BB_ACCESS }}
         run: bun .\cmd\build-ci.ts
+      - name: Upload SumatraPDF Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SumatraPDF-App
+          path: '**/*.exe'
